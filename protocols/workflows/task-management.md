@@ -1,23 +1,17 @@
 # Task Management Protocol
 
-## Document Information
-
-| Field | Value |
-|-------|-------|
-| Version | 1.1 |
-| Last Updated | 2026-01-01 |
-| Status | Active |
+**Version:** 1.1
+**Last Updated:** 2026-01-03
+**Purpose:** Standard workflow for managing feature requests, bug fixes, and enhancements
 
 ---
 
 ## Overview
 
-This protocol defines the complete lifecycle for managing development tasks from initial request through implementation, documentation, and cleanup.
-
-### Task Lifecycle
+Every task follows this lifecycle:
 
 ```
-Request → Track → Review → Propose → Plan → Implement → Document → Complete → Cleanup
+Request -> Track -> Review -> Propose -> Plan -> Implement -> Document -> Complete -> Cleanup
 ```
 
 ---
@@ -51,22 +45,14 @@ Add new item to `TODO.md` under "Active Work" section:
 - [ ] Deliverable 3
 ```
 
-### 1.3 Update Quick Reference Tables
+### 1.3 Priority Levels
 
-Add to appropriate priority table:
-
-```markdown
-### [Priority] Priority
-| Item | Status | Owner |
-|------|--------|-------|
-| [Feature Name] | Proposed | [Owner] |
-```
-
-Add to Pending Proposals table:
-
-```markdown
-| [Feature Name] | {feature}.md | PROPOSED | [Priority] |
-```
+| Priority | Criteria |
+|----------|----------|
+| **CRITICAL** | Security, data loss, blocking issues |
+| **HIGH** | Core functionality, user-facing bugs |
+| **MEDIUM** | Enhancements, quality improvements |
+| **LOW** | Nice-to-have, future considerations |
 
 ---
 
@@ -81,22 +67,12 @@ Add to Pending Proposals table:
 
 ### 2.2 Research Existing Code
 
-```bash
-# Search for related code
-grep -rn "RelatedTerm" --include="*.cs" src/
-grep -rn "RelatedTerm" --include="*.tsx" src/
-
-# Find related files
-find src -name "*Related*" -type f
-
-# Check existing patterns
-cat src/path/to/similar/implementation.cs
-```
+Search for related code and patterns in the codebase.
 
 ### 2.3 Identify Affected Areas
 
 Document:
-- Which layers are affected (Controller, Service, Repository, Model)?
+- Which layers are affected?
 - Which files need modification?
 - Are there database changes needed?
 - Are there frontend changes needed?
@@ -167,7 +143,7 @@ For Medium+ complexity, create `docs/proposals/{feature}.md`:
 
 | File | Change |
 |------|--------|
-| path/to/file.cs | Description of change |
+| path/to/file | Description of change |
 
 ---
 
@@ -191,7 +167,7 @@ For Medium+ complexity, create `docs/proposals/{feature}.md`:
 - Present proposal to stakeholders
 - Address questions and concerns
 - Update proposal based on feedback
-- Update status in TODO.md: `PROPOSED` → `APPROVED`
+- Update status in TODO.md: `PROPOSED` -> `APPROVED`
 
 ---
 
@@ -209,27 +185,7 @@ For Medium+ complexity, create `docs/proposals/{feature}.md`:
 
 ### 4.2 Document Test Plan
 
-Add to proposal or create separate test document:
-
-```markdown
-## Test Plan
-
-### Unit Tests
-| Test | Description | Expected Result |
-|------|-------------|-----------------|
-| Test_ValidInput_ReturnsSuccess | ... | ... |
-| Test_InvalidInput_ReturnsError | ... | ... |
-
-### Integration Tests
-| Test | Description | Expected Result |
-|------|-------------|-----------------|
-| ... | ... | ... |
-
-### Manual Testing
-| Scenario | Steps | Expected Result |
-|----------|-------|-----------------|
-| ... | 1. ... 2. ... | ... |
-```
+Add to proposal or create separate test document.
 
 ### 4.3 Define Acceptance Criteria
 
@@ -237,7 +193,6 @@ Add to proposal or create separate test document:
 - [ ] All integration tests pass
 - [ ] Manual testing scenarios verified
 - [ ] No regression in existing functionality
-- [ ] Performance within acceptable limits
 
 ---
 
@@ -256,39 +211,18 @@ In TODO.md, change status:
 2. **Repository** - Data access layer
 3. **Service** - Business logic
 4. **Controller** - API endpoints
-5. **Attributes/Filters** - Metadata and cross-cutting concerns
-6. **Frontend** - UI components (if applicable)
+5. **Frontend** - UI components (if applicable)
 
 ### 5.3 Follow Coding Standards
 
-- Add XML documentation to public APIs
+- Add documentation to public APIs
 - Follow existing patterns in codebase
-- Use expression-bodied members for simple methods
 - Apply appropriate security attributes
-- Add metadata attributes for OpenAPI extensions
+- Add comments only where logic isn't self-evident
 
-### 5.4 Run Tests
+### 5.4 Verify as You Go
 
-```bash
-# Build
-dotnet build
-
-# Run tests
-dotnet test
-
-# Manual verification
-dotnet run --project src/GreenOnion.API
-```
-
-### 5.5 Self-Review Checklist
-
-- [ ] Code compiles without warnings
-- [ ] All tests pass
-- [ ] Security attributes applied correctly
-- [ ] XML documentation added
-- [ ] No hardcoded values (use configuration)
-- [ ] Error handling appropriate
-- [ ] Logging added where needed
+Build and test after each significant change.
 
 ---
 
@@ -303,23 +237,16 @@ If feature introduces new patterns:
 ### 6.2 API Documentation
 
 If new endpoints or models:
-- Add XML documentation to code
-- Update `docs/swagger-extensions.md` if new extensions
-- Verify OpenAPI spec is generated correctly
+- Add documentation to code
+- Update API documentation
+- Verify spec is generated correctly
 
 ### 6.3 CLAUDE.md Updates
 
 If feature affects development workflow:
-- Add to "Recent Implementations" section
+- Add to relevant sections
 - Update file counts/locations if changed
 - Add any new patterns to remember
-
-### 6.4 Frontend Guide
-
-If frontend integration needed:
-- Update or create guide in `docs/`
-- Include code examples
-- Document expected behavior
 
 ---
 
@@ -327,15 +254,11 @@ If frontend integration needed:
 
 ### 7.1 Change History vs Documentation
 
-**Important distinction:**
-
 | File Type | Contains | Does NOT Contain |
 |-----------|----------|------------------|
 | `docs/changes/{feature}.md` | What changed, files modified, decisions made | How to use, examples, guides |
 | `docs/architecture/*.md` | How it works, patterns, design | Change history |
 | `docs/*.md` guides | How to use, examples, integration | Implementation details |
-
-Change history is a **record of what was done**, not documentation of how to use the feature.
 
 ### 7.2 Create Change History File
 
@@ -356,11 +279,10 @@ Create `docs/changes/{feature}.md`:
 ## What Changed
 
 ### Files Created
-- `path/to/new/file.cs`
-- `path/to/another/file.cs`
+- `path/to/new/file`
 
 ### Files Modified
-- `path/to/existing/file.cs`
+- `path/to/existing/file`
 
 ## Key Decisions
 
@@ -371,25 +293,12 @@ Create `docs/changes/{feature}.md`:
 
 For usage and implementation details, see:
 - [Architecture Doc](../architecture/relevant.md)
-- [API Reference](../swagger-extensions.md)
 - [Guide](../relevant-guide.md)
 
 ---
 
 *Completed: YYYY-MM-DD*
 ```
-
-### 7.3 Update Feature Documentation
-
-The actual "how to use" documentation goes in the appropriate location:
-
-| Content Type | Location |
-|--------------|----------|
-| Architecture/design | `docs/architecture/{feature}.md` |
-| API extensions | `docs/swagger-extensions.md` |
-| Frontend guides | `docs/{feature}-guide.md` |
-| Data sync | `docs/data-sync/*.md` |
-| Protocols | `.claude/protocols/*.md` |
 
 ---
 
@@ -398,33 +307,24 @@ The actual "how to use" documentation goes in the appropriate location:
 ### 8.1 Update TODO.md
 
 1. **Remove from Active Work** section entirely
-
-2. **Remove from Quick Reference** tables (High/Medium/Low Priority)
-
-3. **Remove from Pending Proposals** table (strike-through or delete row)
-
-4. **DO NOT add to "Recently Completed"** - that section is only for quick reference during active development sessions. Once changes are logged in `docs/changes/`, the item is fully tracked there.
+2. **Remove from Quick Reference** tables
+3. **Remove from Pending Proposals** table
 
 **Rationale:** TODO.md should only contain **active work**. Completed work is tracked in:
-- `docs/changes/{descriptive-name}.md` - Change summary (what was done)
-- `docs/features/{feature}.md` - Feature documentation (how it works)
+- `docs/changes/{feature}.md` - Change summary
+- `docs/features/{feature}.md` - Feature documentation
 
 ### 8.2 Move Proposal to Features Folder
 
-Once implemented and change history created, move the proposal to the features archive:
+Once implemented and change history created:
 
 ```bash
-# Move completed proposal to features folder
 mv docs/proposals/{feature}.md docs/features/{feature}.md
 ```
 
-**Folder purposes:**
-- `docs/proposals/` - Active proposals under consideration or in progress
-- `docs/features/` - Completed/implemented features (archive of what was built)
-
-Update the status in the moved file to reflect completion:
+Update the status in the moved file:
 ```markdown
-**Status**: ✅ Implemented (YYYY-MM-DD)
+**Status**: Implemented (YYYY-MM-DD)
 ```
 
 ### 8.3 Final Verification
@@ -432,7 +332,7 @@ Update the status in the moved file to reflect completion:
 - [ ] TODO.md updated
 - [ ] Change history created
 - [ ] CHANGELOG.md updated
-- [ ] Proposal document removed (if applicable)
+- [ ] Proposal document moved to features
 - [ ] CLAUDE.md updated (if needed)
 - [ ] All tests passing
 - [ ] Documentation complete
@@ -442,10 +342,10 @@ Update the status in the moved file to reflect completion:
 ## Quick Reference: Task States
 
 ```
-PROPOSED → APPROVED → IN_PROGRESS → COMPLETED
-    ↓
+PROPOSED -> APPROVED -> IN_PROGRESS -> COMPLETED
+    |
   BLOCKED (if dependencies)
-    ↓
+    |
   REJECTED (if not approved)
 ```
 
@@ -456,50 +356,22 @@ PROPOSED → APPROVED → IN_PROGRESS → COMPLETED
 | Active tracking | `TODO.md` |
 | Active proposals | `docs/proposals/{feature}.md` |
 | Completed features | `docs/features/{feature}.md` |
-| Change summaries | `docs/changes/{descriptive-name}.md` |
+| Change summaries | `docs/changes/{feature}.md` |
 | Architecture | `docs/architecture/*.md` |
-| API docs | `docs/swagger-extensions.md` |
 | Protocols | `.claude/protocols/*.md` |
-| Memory | `CLAUDE.md` |
-
-### Change Summary Naming Convention
-
-Change summary filenames should be **descriptive of the change set**, not just the feature name:
-
-| Good | Bad |
-|------|-----|
-| `2026-01-query-model-extensions.md` | `query-models.md` |
-| `2025-12-31-bulk-actions-fixes.md` | `bulk-actions.md` |
-| `entity-based-filter-linking.md` | `filters.md` |
-| `external-sync-readonly-full-stack.md` | `sync.md` |
-
-**Format:** `[optional-date-]{descriptive-change-name}.md`
-
-## Quick Reference: Status Updates
-
-| When | Update TODO.md Status To |
-|------|--------------------------|
-| Request received | `PROPOSED` |
-| Approved for work | `APPROVED` |
-| Implementation started | `IN_PROGRESS` |
-| Waiting on dependency | `BLOCKED` |
-| Fully complete | `COMPLETED` (then move to Recently Completed) |
 
 ---
 
 ## Related Protocols
 
-| Protocol | Purpose |
-|----------|---------|
-| [security-audit.md](./security-audit.md) | Security verification |
-| [documentation-standards.md](./documentation-standards.md) | Doc organization |
-| [template-and-swagger-documentation.md](./template-and-swagger-documentation.md) | Template maintenance |
+- [lifecycle.md](./lifecycle.md) - Development workflow
+- [start-work.md](./start-work.md) - Begin work on item
+- [change-review.md](./change-review.md) - Code review
+- [documentation-standards.md](../documentation/documentation-standards.md) - Doc organization
 
 ---
 
-## Revision History
+## Change Log
 
-| Version | Date | Changes |
-|---------|------|---------|
-| 1.1 | 2026-01-01 | Added features folder for completed proposals; clarified change summary naming; removed "Recently Completed" requirement |
-| 1.0 | 2025-12-31 | Initial protocol |
+- 2026-01-03 v1.1: Generalized for any project, added features folder workflow
+- 2025-12-31 v1.0: Initial protocol
