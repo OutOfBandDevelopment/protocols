@@ -1,6 +1,6 @@
 # Claude Code Configuration
 
-**Last Updated:** 2026-01-03
+**Last Updated:** 2026-01-16
 
 ---
 
@@ -16,11 +16,14 @@ All protocols are in `./protocols/` organized by category:
 
 | Category        | Path                     | Purpose                            |
 |-----------------|--------------------------|----------------------------------- |
-| Documentation   | `protocols/documentation/`| Documentation standards            |
+| Documentation   | `protocols/documentation/`| Documentation standards and guides |
+| Research        | `protocols/research/`    | Technical research and references  |
+| Projects        | `protocols/projects/`    | Project management and reviews     |
+| Maintenance     | `protocols/maintenance/` | Repository maintenance workflows   |
 | Software        | `protocols/software/`    | Analysis and validation            |
 | Workflows       | `protocols/workflows/`   | Development lifecycle              |
 
-See [protocols/README.md](./protocols/README.md) for the complete registry.
+See [protocols/README.md](./protocols/README.md) for the complete registry (36 protocols across 6 categories).
 
 ---
 
@@ -186,4 +189,5 @@ The following preferences were collected and should be maintained:
 
 ## Change Log
 
+- 2026-01-16: Updated protocols location table; added research, projects, and maintenance categories; registry now contains 36 protocols
 - 2026-01-03: Initial CLAUDE.md created with consolidated rules

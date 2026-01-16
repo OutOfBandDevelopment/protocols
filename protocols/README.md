@@ -1,6 +1,6 @@
 # Protocol Registry
 
-**Version:** 1.4
+**Version:** 2.0
 **Last Updated:** 2026-01-16
 
 ---
@@ -16,6 +16,9 @@ This directory contains reusable protocols for software development workflows. T
 | Category      | Path                 | Purpose                             |
 |---------------|----------------------|-------------------------------------|
 | Documentation | `./documentation/`   | Documentation standards and guides  |
+| Research      | `./research/`        | Technical research and references   |
+| Projects      | `./projects/`        | Project management and reviews      |
+| Maintenance   | `./maintenance/`     | Repository maintenance workflows    |
 | Software      | `./software/`        | Analysis and validation protocols   |
 | Workflows     | `./workflows/`       | Development lifecycle protocols     |
 
@@ -25,11 +28,19 @@ This directory contains reusable protocols for software development workflows. T
 
 ### Documentation Protocols
 
-| Protocol                      | Version | Purpose                                  |
-|-------------------------------|---------|------------------------------------------|
-| [documentation-style-guide.md] | 2.1     | Technical documentation content standards |
-| [documentation-standards.md]  | 1.2     | File organization and naming conventions |
-| [documentation-structure.md]  | 1.0     | Directory structure and templates        |
+| Protocol                                    | Version | Purpose                                  |
+|---------------------------------------------|---------|------------------------------------------|
+| [camera-collection-protocol.md]             | 1.0     | Photography equipment documentation      |
+| [device-lab-protocol.md]                    | 1.0     | Computing device documentation           |
+| [documentation-standards.md]                | 1.2     | File organization and naming conventions |
+| [documentation-structure.md]                | 1.0     | Directory structure and templates        |
+| [documentation-style-guide.md]              | 2.1     | Technical documentation content standards |
+| [equipment-documentation-protocol.md]       | 1.0     | Test equipment documentation             |
+| [expansion-boards-documentation-protocol.md] | 1.0    | Expansion board documentation            |
+| [index-protocol.md]                         | 1.2     | Directory index standards                |
+| [programmable-devices-documentation-protocol.md] | 1.0 | Development board documentation          |
+| [tools-and-components-protocol.md]          | 1.2     | Tools and components inventory           |
+| [vintage-computers-documentation-protocol.md] | 1.0   | Vintage computer documentation           |
 
 ### Software Analysis Protocols
 
@@ -45,6 +56,29 @@ This directory contains reusable protocols for software development workflows. T
 | [schema-integration.md]              | 1.0     | Schema framework integration          |
 | [datagrid-style-guide.md]            | 1.0     | DataGrid component standards          |
 | [template-swagger-documentation.md]  | 1.0     | Template/OpenAPI documentation        |
+
+### Research Protocols
+
+| Protocol                          | Version | Purpose                               |
+|-----------------------------------|---------|---------------------------------------|
+| [books-protocol.md]               | 1.0     | Technical reference documentation     |
+| [online-shopping-protocol.md]     | 1.0     | Vendor evaluation and purchase tracking |
+| [technical-research-protocol.md]  | 1.3     | Technical research methodology        |
+
+### Project Protocols
+
+| Protocol                      | Version | Purpose                               |
+|-------------------------------|---------|---------------------------------------|
+| [project-review-protocol.md]  | 1.1     | Periodic inventory review workflow    |
+| [projects-protocol.md]        | 1.2     | Active project documentation          |
+
+### Maintenance Protocols
+
+| Protocol                             | Version | Purpose                               |
+|--------------------------------------|---------|---------------------------------------|
+| [changelog-protocol.md]              | 1.0     | Repository change tracking            |
+| [claude-md-maintenance-protocol.md]  | 1.0     | CLAUDE.md performance management      |
+| [todo-md-archival-protocol.md]       | 1.0     | Task archival and management          |
 
 ### Workflow Protocols
 
@@ -154,6 +188,7 @@ create-test-plan.md --> (requires change review)
 
 | Date       | Version | Changes                                    |
 |------------|---------|------------------------------------------- |
+| 2026-01-16 | 2.0     | Imported 16 reusable protocols from incoming; created research/, projects/, maintenance/ categories |
 | 2026-01-16 | 1.4     | Updated protocol-import to v1.3 with trigger phrases |
 | 2026-01-16 | 1.3     | Updated protocol-import to v1.2 with category creation support |
 | 2026-01-16 | 1.2     | Added protocol-import workflow              |
@@ -165,9 +200,17 @@ create-test-plan.md --> (requires change review)
 ## Links
 
 ### Documentation Protocols
-- [Documentation Style Guide](./documentation/documentation-style-guide.md)
+- [Camera Collection Protocol](./documentation/camera-collection-protocol.md)
+- [Device Lab Protocol](./documentation/device-lab-protocol.md)
 - [Documentation Standards](./documentation/documentation-standards.md)
 - [Documentation Structure](./documentation/documentation-structure.md)
+- [Documentation Style Guide](./documentation/documentation-style-guide.md)
+- [Equipment Documentation Protocol](./documentation/equipment-documentation-protocol.md)
+- [Expansion Boards Documentation Protocol](./documentation/expansion-boards-documentation-protocol.md)
+- [Index Protocol](./documentation/index-protocol.md)
+- [Programmable Devices Documentation Protocol](./documentation/programmable-devices-documentation-protocol.md)
+- [Tools and Components Protocol](./documentation/tools-and-components-protocol.md)
+- [Vintage Computers Documentation Protocol](./documentation/vintage-computers-documentation-protocol.md)
 
 ### Software Analysis Protocols
 - [Architectural Analysis](./software/architectural-analysis.md)
@@ -180,6 +223,20 @@ create-test-plan.md --> (requires change review)
 - [Schema Integration](./software/schema-integration.md)
 - [DataGrid Style Guide](./software/datagrid-style-guide.md)
 - [Template and Swagger Documentation](./software/template-swagger-documentation.md)
+
+### Research Protocols
+- [Books Protocol](./research/books-protocol.md)
+- [Online Shopping Protocol](./research/online-shopping-protocol.md)
+- [Technical Research Protocol](./research/technical-research-protocol.md)
+
+### Project Protocols
+- [Project Review Protocol](./projects/project-review-protocol.md)
+- [Projects Protocol](./projects/projects-protocol.md)
+
+### Maintenance Protocols
+- [Changelog Protocol](./maintenance/changelog-protocol.md)
+- [Claude MD Maintenance Protocol](./maintenance/claude-md-maintenance-protocol.md)
+- [Todo MD Archival Protocol](./maintenance/todo-md-archival-protocol.md)
 
 ### Workflow Protocols
 - [Init Setup](./workflows/init-setup.md)
