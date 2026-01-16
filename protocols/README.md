@@ -1,7 +1,7 @@
 # Protocol Registry
 
-**Version:** 1.1
-**Last Updated:** 2026-01-03
+**Version:** 1.4
+**Last Updated:** 2026-01-16
 
 ---
 
@@ -50,13 +50,14 @@ This directory contains reusable protocols for software development workflows. T
 
 | Protocol              | Version | Trigger Phrase               | Purpose                   |
 |-----------------------|---------|------------------------------|---------------------------|
-| [init-setup.md]       | 1.0     | `init`, `setup project`      | Project initialization    |
-| [lifecycle.md]        | 1.0     | `show lifecycle`             | Development workflow      |
-| [start-work.md]       | 1.0     | `start work on {id}`         | Begin work on item        |
 | [change-review.md]    | 1.0     | `review my changes`          | Code review               |
 | [create-test-plan.md] | 1.0     | `create test plan`           | Test planning             |
-| [task-management.md]  | 1.1     | -                            | Task lifecycle management |
+| [init-setup.md]       | 1.0     | `init`, `setup project`      | Project initialization    |
+| [lifecycle.md]        | 1.0     | `show lifecycle`             | Development workflow      |
+| [protocol-import.md]  | 1.3     | `check incoming for updates`, `I have new protocols`, `import protocols` | Import, sanitize, classify, and organize protocols into categories |
 | [review-branch-updates.md] | 1.0 | `pulled latest`             | Branch update review      |
+| [start-work.md]       | 1.0     | `start work on {id}`         | Begin work on item        |
+| [task-management.md]  | 1.1     | -                            | Task lifecycle management |
 
 ---
 
@@ -82,16 +83,21 @@ This directory contains reusable protocols for software development workflows. T
 
 ### Trigger Phrases
 
-| Phrase                       | Protocol                   |
-|------------------------------|----------------------------|
-| `init`                       | init-setup.md              |
-| `setup project`              | init-setup.md              |
-| `start work on {number}`     | start-work.md              |
-| `review my changes`          | change-review.md           |
-| `create test plan`           | create-test-plan.md        |
-| `show lifecycle`             | lifecycle.md               |
-| `show workflow`              | lifecycle.md               |
-| `pulled latest`              | review-branch-updates.md   |
+| Phrase                           | Protocol                   |
+|----------------------------------|----------------------------|
+| `init`                           | init-setup.md              |
+| `setup project`                  | init-setup.md              |
+| `start work on {number}`         | start-work.md              |
+| `review my changes`              | change-review.md           |
+| `create test plan`               | create-test-plan.md        |
+| `check incoming for updates`     | protocol-import.md         |
+| `I have new protocols`           | protocol-import.md         |
+| `import protocols`               | protocol-import.md         |
+| `process incoming protocols`     | protocol-import.md         |
+| `review incoming`                | protocol-import.md         |
+| `show lifecycle`                 | lifecycle.md               |
+| `show workflow`                  | lifecycle.md               |
+| `pulled latest`                  | review-branch-updates.md   |
 
 ---
 
@@ -148,6 +154,9 @@ create-test-plan.md --> (requires change review)
 
 | Date       | Version | Changes                                    |
 |------------|---------|------------------------------------------- |
+| 2026-01-16 | 1.4     | Updated protocol-import to v1.3 with trigger phrases |
+| 2026-01-16 | 1.3     | Updated protocol-import to v1.2 with category creation support |
+| 2026-01-16 | 1.2     | Added protocol-import workflow              |
 | 2026-01-03 | 1.1     | Added software and workflow protocols      |
 | 2026-01-03 | 1.0     | Initial protocol registry consolidated     |
 
@@ -178,6 +187,7 @@ create-test-plan.md --> (requires change review)
 - [Start Work](./workflows/start-work.md)
 - [Change Review](./workflows/change-review.md)
 - [Create Test Plan](./workflows/create-test-plan.md)
+- [Protocol Import](./workflows/protocol-import.md)
 - [Task Management](./workflows/task-management.md)
 - [Review Branch Updates](./workflows/review-branch-updates.md)
 
@@ -199,5 +209,6 @@ create-test-plan.md --> (requires change review)
 [start-work.md]: ./workflows/start-work.md
 [change-review.md]: ./workflows/change-review.md
 [create-test-plan.md]: ./workflows/create-test-plan.md
+[protocol-import.md]: ./workflows/protocol-import.md
 [task-management.md]: ./workflows/task-management.md
 [review-branch-updates.md]: ./workflows/review-branch-updates.md

@@ -150,15 +150,20 @@ Use the workflow protocols in this order:
 
 ## Trigger Phrases
 
-| Phrase                    | Protocol                               |
-|---------------------------|----------------------------------------|
-| `init`                    | `workflows/init-setup.md`              |
-| `setup project`           | `workflows/init-setup.md`              |
-| `start work on {number}`  | `workflows/start-work.md`              |
-| `review my changes`       | `workflows/change-review.md`           |
-| `create test plan`        | `workflows/create-test-plan.md`        |
-| `show lifecycle`          | `workflows/lifecycle.md`               |
-| `show workflow`           | `workflows/lifecycle.md`               |
+| Phrase                           | Protocol                               |
+|----------------------------------|----------------------------------------|
+| `init`                           | `workflows/init-setup.md`              |
+| `setup project`                  | `workflows/init-setup.md`              |
+| `start work on {number}`         | `workflows/start-work.md`              |
+| `review my changes`              | `workflows/change-review.md`           |
+| `create test plan`               | `workflows/create-test-plan.md`        |
+| `check incoming for updates`     | `workflows/protocol-import.md`         |
+| `I have new protocols`           | `workflows/protocol-import.md`         |
+| `import protocols`               | `workflows/protocol-import.md`         |
+| `process incoming protocols`     | `workflows/protocol-import.md`         |
+| `review incoming`                | `workflows/protocol-import.md`         |
+| `show lifecycle`                 | `workflows/lifecycle.md`               |
+| `show workflow`                  | `workflows/lifecycle.md`               |
 
 ---
 
